@@ -1,0 +1,1 @@
+import{t,a as o}from"../chunks/DifGyu_c.js";import"../chunks/BWlMvvYn.js";import{n as m}from"../chunks/ksq3ZuxP.js";var i=t('<h1>Contact</h1> <p>Neem contact met me op via:</p> <ul><li>Email: jouwnaam@example.com</li> <li>LinkedIn: <a href="#">Klik hier</a></li></ul>',1);function l(a){var e=i();m(4),o(a,e)}export{l as component};
