@@ -122,13 +122,16 @@
     </div>
 
     <!-- About Me -->
-    <aside class="self-start w-[90%] lg:w-[80%]">
+    <aside class="self-start w-[90%] lg:w-[90%]">
         <h2 class="text-[#FFB84D] text-xl font-bold">About Me</h2>
         <br>
-        <p>I am a 28-year-old UX Designer who recently graduated from The Hague University of Applied Sciences.
+        <p>I am a UX Designer with a passion for creating intuitive, user-focused digital experiences. My design approach is a combination of thoughtful analysis and human psychology.
             <br>
             <br>
-            I have a strong passion for understanding human behavior and designing intuitive experiences that truly meet users' needs. My approach is highly user-centered, combining psychology and data-driven insights to create solutions that are both functional and engaging.
+            I recently graduated with a project centered around redesigning the digital job application process, where I learned that clear communication and a deep understanding of user needs are essential. This experience reinforced my belief that good design starts with empathy; seeing users not just as 'users,' but as real people with genuine motivations, emotions, and behavior.
+            <br>
+            <br>
+            In my free time, I explore animation and game design principles as creative outlets and enjoy diving deeper into psychology.
         </p>
     </aside>
 </section>

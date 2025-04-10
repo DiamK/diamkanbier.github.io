@@ -17,19 +17,22 @@
         <br>
         <h3>Tools Used: Blender</h3>
     </div>
-        <!-- Project Details -->
-        <section class="project-details">
-            <h2>About the Project</h2>
-            <p>
-                For my animation class I paired up with another student. At the time I was really enjoying working with Blender and she really liked drawing cute characters. We figured we'd try to combine the two things and try to animate a 2D drawn character in a 3D environment in Blender.
-
-We chose the song Girl in Blue by Animal sun because we both really enjoyed it and envisioned the scene right away. We built a storyboard, she started drawing and I started building the world.
-
-The biggest challenge we faced was first getting the drawn character into Blender. After we figured out how to it was a tough but very fun challenge to animate everything correctly and keyframe everything to the right second of the song!
-
-Check out the whole animation below!
-            </p>
-        </section>
+    
+    <!-- Project Details -->
+    <section class="project-details">
+        <h2>About the Project</h2>
+        <p>
+            For my animation class I teamed up with another student. At that time, I was really into Blender, and she loved drawing cute characters. We thought it would be cool to combine our skills and try animating her 2D illustrations within a 3D scene.
+    
+            We picked the song "Girl in Blue" by Animal Sun because we both liked the vibe and immediately imagined how the scene would look. After sketching out our storyboard, she started on the character art, while I got to work creating the 3D environment.
+    
+            One of the biggest challenges was getting her 2D drawings into Blender in a way that actually worked. Once we managed that, my next challenge was timing the animation precisely to the music—tricky but super fun to figure out!
+    
+            Check out the full animation below!
+        </p>
+    </section>
+    
+    
 
     <!-- Video Embed -->
     <div class="video-container">

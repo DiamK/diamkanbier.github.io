@@ -223,3 +223,15 @@ header {
     border-radius: 5px;
     font-weight: bold;
 }
+
+.c-button {
+    display: inline-block;
+    width: 38px; /* adjust size as needed */
+    height: 38px;
+    vertical-align: middle;
+    transition: transform 0.1s ease;
+}
+
+.c-button.pressed {
+    transform: scale(0.9);
+}
