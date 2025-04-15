@@ -1,4 +1,4 @@
-import{t as p,a as h}from"../chunks/GW5ubwJ8.js";import"../chunks/C1kJm3GE.js";import{h as a,n as o,i as r}from"../chunks/CQiwtr_K.js";import{s as i}from"../chunks/eAMoUNce.js";import{b as s}from"../chunks/DAHAwLWS.js";var l=p(`<div class="project-page"><a class="back-button"><img alt="arrow icon"> Back to tiles</a> <div class="project-header"><h1>Recharge the World</h1> <p class="description">Graphic design for marketing campaign
+import{t as p,a as h}from"../chunks/GW5ubwJ8.js";import"../chunks/C1kJm3GE.js";import{h as a,n as o,i as r}from"../chunks/CQiwtr_K.js";import{s as i}from"../chunks/eAMoUNce.js";import{b as s}from"../chunks/BDuxa_YP.js";var l=p(`<div class="project-page"><a class="back-button"><img alt="arrow icon"> Back to tiles</a> <div class="project-header"><h1>Recharge the World</h1> <p class="description">Graphic design for marketing campaign
             Recharge the World
             
             
