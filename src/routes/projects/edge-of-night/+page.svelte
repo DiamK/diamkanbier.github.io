@@ -1,52 +1,66 @@
 <script>
-  import { base } from '$app/paths';
-</script>
-
-<div class="project-page">
+    import { base } from '$app/paths';
+  </script>
+  
+  <div class="project-page max-w-5xl mx-auto px-4 py-8">
     <!-- Escape Hatch -->
-    <a class="back-button" href={`${base}/`}>
-        <img src="{`${base}/images/arrow_back.svg`}" alt="arrow icon">
+    <a class="back-button flex items-center text-blue-300 hover:text-blue-100 mb-8" href={`${base}/`}>
+        <img src={`${base}/images/arrow_back.svg`} alt="arrow icon" class="w-6 h-6 mr-2">
         Back to tiles
     </a>
     
-
-    <!-- Header -->
-    <div class="project-header">
-        <h1>Edge of Night</h1>
-        <p class="description">A kinetic typography animation created in After Effects</p>
-        <br>
-        <h3>Tools Used: After Effects</h3>
+    <!-- Project Header -->
+    <div class="project-header mb-10">
+        <h1 class="text-4xl font-bold mb-4">Edge of Night</h1>
+        <p class="description text-lg text-gray-200 mb-2">
+            A kinetic typography animation created in After Effects
+        </p>
+        <p class="text-gray-200 text-base">
+            Tools Used: <span class="font-medium">After Effects</span>
+        </p>
     </div>
     
-    <!-- Project Details -->
-    <section class="project-details">
-        <h2>About the Project</h2>
-        <p>
-            During my animation masterclass, I discovered Adobe After Effects and immediately loved it. I knew right away that I wanted to improve my skills in it, so I challenged myself to create a kinetic typography animation.
-    <br>
-            Kinetic typography appealed to me because it's such a creative and effective way to bring text to life, communicate emotions, and keep the viewer's attention. I decided to animate a movie scene to make the project more personal, I chose the scene "Edge of Night" from The Lord of the Rings: Return of the King, as it resonated deeply with me and matched perfectly with what I envisioned.
-    
-            One of the biggest challenges was deciding which techniques and effects to use in After Effects, as the program offers an overwhelming number of possibilities. On top of that, getting sick with COVID halfway through created a huge backlog and extra stress. Despite that, I managed to pick up where I left off and gradually built the animation step-by-step.
-    
-            This project taught me a lot, especially the importance of making decisions quickly and keeping an organized workflow. Through experimenting and watching many tutorials, I improved significantly in After Effects—from simple fade-in effects to more complex 3D transitions. In the end, I'm really happy with the result, mostly because it clearly shows how much my skills have grown.
-    
-            Check out the final animation below!
-        </p>
+    <!-- Project Goals -->
+    <section class="project-goals mb-10">
+        <h2 class="text-2xl font-bold mb-4">Project Goals</h2>
+        <ul class="list-disc ml-6 space-y-2 text-gray-200">
+            <li>Improve my skills in After Effects</li>
+            <li>Experiment with kinetic typography</li>
+            <li>Create an animation that holds the viewer's attention</li>
+        </ul>
     </section>
     
-
+    <!-- Project Overview -->
+    <section class="project-details mb-10">
+      <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+      <p class="mb-4 text-gray-200">
+        During an animation masterclass, I discovered Adobe After Effects and immediately fell in love with its creative possibilities. I challenged myself to create a kinetic typography animation that would push my skills to the next level.
+      </p>
+      <p class="mb-4 text-gray-200">
+        Kinetic typography appealed to me as a dynamic way to bring text to life, evoke emotions, and capture the viewer's attention. To add a personal touch, I chose to animate the "Edge of Night" scene from The Lord of the Rings: Return of the King. Because I love the Lord of the Rings.
+      </p>
+      <p class="mb-4 text-gray-200">
+        The biggest challenge for me on this project was refining my approach to selecting and applying the ideal animation techniques and visual effects among the countless possibilities in After Effects.
+    </p>
+    <p class="mb-4 text-gray-200">
+        The project turned my creative concept into reality while sharpening my skills in integrating expressive 2D text with dynamic motion. Check out the final animation below!
+      </p>
+      
+    
+    </section>
+    
     <!-- Video Embed -->
-    <div class="video-container">
+    <div class="video-container flex justify-center">
         <iframe 
-            title="Girl in Blue animation"
+            title="Edge of Night animation"
             width="560" 
             height="315" 
             src="https://www.youtube.com/embed/qxxkrc0d2XU?si=s3aIihpVylaqJB0Q" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
+            allowfullscreen
+            class="rounded-lg shadow-lg">
         </iframe>
     </div>
-
-
-</div>
+  </div>
+  
