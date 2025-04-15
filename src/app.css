@@ -1,189 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000&display=swap');
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
 * {
     font-family: 'Nunito', sans-serif;
-  }
+}
 
-  body {
+body {
     background: linear-gradient(to bottom, #0E374E, #031A27);
-	color: white;
+    color: white;
 }
 
-/* Overlay */
+/* Overlay (laat staan als je deze functionaliteit gebruikt) */
 .overlay {
-	position: fixed;
-	inset: 0;
-	background: rgba(0, 0, 0, 0.5); /* Semi-transparant zwart */
-	backdrop-filter: blur(10px); /* Wazig effect op de achtergrond */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 50;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
 }
-/* De deuren */
+
+/* De deuren (laat staan als je deze gebruikt) */
 .doors {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
 }
 
 .door {
-	background: rgba(0, 0, 0, 0.5); /* Semi-transparant zwart */
-	backdrop-filter: blur(10px); /* Wazig effect op de achtergrond */
-	flex: 1;
-	transition: transform 1.5s ease-in-out;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    flex: 1;
+    transition: transform 1.5s ease-in-out;
 }
 
-/* Linker deur: roteert naar binnen */
 .door.left {
-	transform-origin: left center; /* Linkerzijde blijft vast */
-	transform: rotateY(0deg); /* Startpositie */
+    transform-origin: left center;
+    transform: rotateY(0deg);
 }
 
-/* Rechter deur: roteert naar binnen */
 .door.right {
-	transform-origin: right center; /* Rechterzijde blijft vast */
-	transform: rotateY(0deg); /* Startpositie */
+    transform-origin: right center;
+    transform: rotateY(0deg);
 }
 
-/* Tekst in de overlay */
+/* Overlay tekst */
 .overlay-text {
-	position: absolute;
-	text-align: center;
-	color: white;
-	z-index: 10;
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 10;
 }
 
 .overlay-text h1 {
-	font-size: 3rem;
-	margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .overlay-text p {
-	font-size: 1.5rem;
-	margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* Knop */
 .enter-btn {
-	background: #0F384F;
-	color: white;
-	padding: 0.5rem 1rem;
-	border: none;
-	cursor: pointer;
-	border-radius: 0.25rem;
-	transition: background 0.3s;
+    background: #0F384F;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: background 0.3s;
 }
 
 .enter-btn:hover {
-	background: #0F384F;
+    background: #0F384F;
 }
 
-/* Content */
+/* Content (vervolgens gebruikt voor animaties, etc.) */
 .content {
-	display: none;
-	opacity: 0;
-	animation: fadeIn 1s forwards 1.5s; /* Wacht tot de deuren open zijn */
+    display: none;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.5s;
 }
 
 @keyframes fadeIn {
-	to {
-		opacity: 1;
-	}
+    to { opacity: 1; }
 }
 
+/* Avatar */
 .avatar {
-	width: 250px;
-	height: 250px;
-	border-radius: 50%;
-	border: 2px solid #FFB84D; 
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #FFB84D; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-
+/* Project Tile */
 .project-tile {
-    background: rgba(255, 204, 102, 0.1); 
-    border-left: 4px solid #FFB84D; 
+    background: rgba(255, 204, 102, 0.08);
+    border-left: 4px solid #FFB84D;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-tile {
-    background: rgba(255, 204, 102, 0.08);
-    border-left: 4px solid #FFB84D; 
-}
-
 .project-tile:hover {
-    box-shadow: 0 4px 10px rgba(255, 184, 77, 0.3); 
+    box-shadow: 0 4px 10px rgba(255, 184, 77, 0.3);
 }
 
+/* Header styling behoudt jouw originele styling */
 header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding-bottom: 1rem;
 }
 
+/* Project Page */
 .project-page {
     max-width: 900px;
     margin: auto;
     padding: 40px 20px;
-}
-
-.back-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(14, 55, 78, 0.8); 
-    position: absolute;
-    top: 350px;
-    left: 120px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 10px 16px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-    border: 1px solid rgba(255, 184, 77, 0.6); 
-}
-
-.back-button img {
-    width: 38px;
-    height: 38px;
-	filter: brightness(0) invert(1);
-}
-
-.back-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
-    background: rgba(14, 55, 78, 1); 
-}
-
-.back-button img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
-}
-
-.project-page {
     margin-top: 25px;
     background: rgba(0, 0, 0, 0.2);
-    padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
+/* Project Header */
 .project-header h1 {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
+/* Video Container */
 .video-container {
     display: flex;
     justify-content: center;
@@ -196,6 +152,7 @@ header {
     border-radius: 10px;
 }
 
+/* Project Details */
 .project-details {
     margin-top: 40px;
 }
@@ -224,12 +181,56 @@ header {
     font-weight: bold;
 }
 
+/* C Button */
 .c-button {
     display: inline-block;
-    width: 38px; /* adjust size as needed */
+    width: 38px;
     height: 38px;
     vertical-align: middle;
     transition: transform 0.1s ease;
+}
+.c-button.pressed {
+    transform: scale(0.9);
+}
+
+/* Back Button (laat je eigen styling hier staan) */
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(14, 55, 78, 0.8);
+    position: absolute;
+    top: 350px;
+    left: 120px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    border: 1px solid rgba(255, 184, 77, 0.6);
+}
+.back-button img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+    background: rgba(14, 55, 78, 1);
+}
+
+.c-button {
+    display: inline-block;
+    width: 38px; /* of een andere gewenste grootte */
+    height: 38px;
+    vertical-align: middle;
+    transition: transform 0.1s ease;
+    filter: brightness(0) invert(1); /* Dit maakt de button wit */
+    opacity: 0.7;
 }
 
 .c-button.pressed {
