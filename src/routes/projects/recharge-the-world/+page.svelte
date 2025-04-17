@@ -50,12 +50,18 @@
       </p>
     </section>  
 
-    <a 
-    class="underline text-blue-300" 
-    href="https://drive.google.com/file/d/1rotJMgM-nmkMCQuUWw4lIfbdSmU7CKIU/view" 
-    target="_blank" rel="noopener noreferrer">
-    Click here to view our booklet for this campaign!
-  </a>
+    <!-- Prototype Link -->
+    <p class="mt-4 text-sm">
+      <a
+        class="text-blue-300 hover:text-blue-100"
+        href="https://drive.google.com/file/d/1rotJMgM-nmkMCQuUWw4lIfbdSmU7CKIU/view"
+        target="_blank"
+        rel="noopener"
+      >
+        View campaign booklet →
+      </a>
+    </p>
+
     <!-- Visuals (optional) -->
     
     <section class="additional-images mt-10 mb-10">

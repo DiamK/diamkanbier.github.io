@@ -49,14 +49,19 @@
         This project gave me a better understanding of how to design for people who aren't always comfortable with technology.
       </p>
     </section>
+
+    <!-- Prototype Link -->
+    <p class="mt-4 text-sm">
+      <a
+        class="text-blue-300 hover:text-blue-100"
+        href="https://www.figma.com/proto/Pc85xF8C27UPXjczCV8vagcX/npi?node-id=1-2&t=xuKuA1tEiqovuz0r-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
+        target="_blank"
+        rel="noopener"
+      >
+        View full prototype →
+      </a>
+    </p>
     
-    <a 
-    class="underline text-blue-300" 
-    href="https://www.figma.com/proto/Pc85xF8C27UPXjczCV8vagcX/npi?node-id=1-2&t=xuKuA1tEiqovuz0r-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" 
-    target="_blank" rel="noopener noreferrer">
-    Click here to check out the prototype!
-  </a>
-  
     <!-- Screenshots & Designs -->
     <section class="additional-images mt-10 mb-10">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
