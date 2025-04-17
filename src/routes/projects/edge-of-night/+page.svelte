@@ -43,7 +43,7 @@
         The biggest challenge for me on this project was refining my approach to selecting and applying the ideal animation techniques and visual effects among the countless possibilities in After Effects.
     </p>
     <p class="mb-4 text-gray-200">
-        The project turned my creative concept into reality while sharpening my skills in integrating expressive 2D text with dynamic motion. Check out the final animation below!
+        This project turned my creative concept into reality while sharpening my skills in integrating expressive 2D text with dynamic motion. Check out the final animation below!
       </p>
       
     

@@ -1,52 +1,70 @@
 <script>
-  import { base } from '$app/paths';
-</script>
-
-<div class="project-page">
+    import { base } from '$app/paths';
+  </script>
+  
+  <div class="project-page max-w-5xl mx-auto px-4 py-8">
     <!-- Escape Hatch -->
-    <a class="back-button" href={`${base}/`}>
-        <img src="{`${base}/images/arrow_back.svg`}" alt="arrow icon">
-        Back to tiles
+    <a class="back-button flex items-center text-blue-300 hover:text-blue-100 mb-8" href={`${base}/`}>
+      <img src={`${base}/images/arrow_back.svg`} alt="arrow icon" class="w-6 h-6 mr-2" />
+      Back to tiles
     </a>
+  
+    <!-- Project Header -->
+    <div class="project-header mb-10">
+      <h1 class="text-4xl font-bold mb-4">Recharge the World</h1>
+      <p class="description text-lg text-gray-200 mb-2">
+        Graphic design for a marketing campaign to raise awareness about battery recycling.
+      </p>
+      <p class="text-gray-200 text-base">
+        Tools Used: <span class="font-medium">Adobe Illustrator, Photoshop</span>
+      </p>
+    </div>
+  
+    <!-- Project Goals -->
+    <section class="project-goals mb-10">
+      <h2 class="text-2xl font-bold mb-4">Project Goals</h2>
+      <ul class="list-disc list-inside text-gray-200">
+        <li>Raise awareness about battery recycling among young adults</li>
+        <li>Increase the recycling rate from 45% to 65%</li>
+        <li>Create shareable social posts that inspire action</li>
+      </ul>
+    </section>
+  
+    <!-- Project Overview -->
+    <section class="project-details mb-10">
+      <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+      <p class="mb-4 text-gray-200">
+        The marketing team at Stibat, the Dutch organization for battery recycling, asked for help creating a campaign aimed at young adults. Their goal was to increase recycling rates from 45% to 65%, and they wanted something bold that could grab the attention of people between 18 and 25.
+      </p>
+      <p class="mb-4 text-gray-200">
+        We came up with an Instagram campaign built around the message: “Double tap to recharge the world.” The idea was simple: double tapping a post likes it and helps spread the message. It's familiar, quick, and easily shareable.
+      </p>
+      <p class="mb-4 text-gray-200">
+        The campaign included three types of posts: eye-catching visuals to grab attention, informative slides about what recycled batteries can become, and clear calls to action encouraging people to drop off their used batteries.
+      </p>
+      <p class="mb-4 text-gray-200">
+        I was responsible for the graphic design and overall art direction. My goal was to make it bold and have it keep attention, without losing clarity. Designing for social media taught me how important it is to communicate fast, especially on a platform like Instagram.
+      </p>
+      <p class="mb-4 text-gray-200">
+        Our campaign was selected as the winner. We were invited to visit Stibat's headquarters to learn more about their work. They told us they planned to use parts of our campaign in their real world communication, though sadly I haven't seen any of it live yet.
+      </p>
+    </section>  
+
+    <a 
+    class="underline text-blue-300" 
+    href="https://drive.google.com/file/d/1rotJMgM-nmkMCQuUWw4lIfbdSmU7CKIU/view" 
+    target="_blank" rel="noopener noreferrer">
+    Click here to view our booklet for this campaign!
+  </a>
+    <!-- Visuals (optional) -->
     
-
-    <!-- Header -->
-    <div class="project-header">
-        <h1>Recharge the World</h1>
-        <p class="description">Graphic design for marketing campaign
-            Recharge the World
-            
-            
-            Helps spread awareness of the importance of recycling batteries</p>
-        <br>
-        <h3>Tools Used: Adobe Illustrator, Photoshop</h3>
-    </div>
-        <!-- Project Details -->
-        <section class="project-details">
-            <h2>About the Project</h2>
-            <p>
-                The marketing team for the Dutch company for collecting and recycling batteries Stibat, asked for help creating a marketing campaign. Their new mission is to increase the amount of recycled batteries from 45% to 65%. To do this they wanted to reach a new target audience of young adults between the ages of 18 and 25.
-
-The concept created was an instagram campaign that would easily be spread by saying "Double tap to recharge the world", since double tapping a post likes it and therefore spreads it.​
-
-After this the instagram account would have multiple shocking posts to grab the attention, informative posts of what can be done with recycled batteries and activating posts, intending to make the reader go out and bring their batteries to the proper locations.​
-
-Stibat chose our campaign as winner and invited us to go over for a peek into their work. They also told us they would probably use aspects of our campaign for their official campaign, but unfortunately I haven't seen anything as of yet.
-            </p>
-        </section>
-
-    <!-- Video Embed -->
-    <div class="video-container">
-        <iframe 
-            title="Girl in Blue animation"
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/Xn0H4Y5__lk?si=6XR6kEVJlJ3Zxx_9" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-
-</div>
+    <section class="additional-images mt-10 mb-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <img src={`${base}/images/recharge1.png`} alt="Instagram mockup 1" class="rounded-lg shadow-md" />
+        <img src={`${base}/images/recharge1.jpg`} alt="Instagram mockup 2" class="rounded-lg shadow-md" />
+        <img src={`${base}/images/recharge3.png`} alt="Battery info slide" class="rounded-lg shadow-md" />
+      </div>
+    </section>
+   
+  </div>
+  
