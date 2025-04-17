@@ -225,3 +225,74 @@ header {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
     background: rgba(14, 55, 78, 1);
 }
+
+/* === PHONE: stack header elements fully === */
+@media (max-width: 640px) {
+    /* 1) Make the header’s inner flex container a true column, remove margins */
+    header > div {
+      flex-direction: column !important;
+      align-items: center    !important;
+      margin-left:   0       !important;
+      margin-right:  0       !important;
+      text-align:    center  !important;
+    }
+  
+    /* 2) Stack avatar + name/info vertically */
+    header > div > div:first-child {
+      flex-direction: column !important;
+      align-items:    center !important;
+      margin:         0      !important;
+      gap:            0.5rem !important;
+    }
+  
+    /* 3) Remove the ml-20 on the name block so it centers under the avatar */
+    header > div > div:first-child > div {
+      margin-left: 0 !important;
+      margin-top:  0.5rem !important;
+    }
+  
+    /* 4) Shrink avatar a bit and give it bottom‑spacing */
+    header .avatar {
+      width:  70%  !important;
+      height: 70%  !important;
+      margin-bottom: 0.75rem !important;
+    }
+  
+    /* 5) Pull the “open to work” / Press C block beneath, center it */
+    header > div > div:last-child {
+      margin:      1rem 0 0 !important;
+      align-items: center !important;
+      text-align:  center !important;
+      margin-right: 0      !important;
+    }
+  
+    /* 6) Ensure all headings and paragraphs in header are centered */
+    header h1,
+    header p {
+      text-align: center !important;
+    }
+    .back-button {
+        /* undo any prior absolute or transform */
+        position:  relative   !important;
+        top:       auto       !important;
+        left:      auto       !important;
+        transform: none       !important;
+        z-index:   auto       !important;
+      
+        /* center under header, give vertical breathing room */
+        display:   inline-block !important;
+        margin:    1.5rem auto 1rem auto !important;
+      
+        /* hide the “Back to tiles” text */
+        font-size: 0         !important;
+        line-height: 0       !important;
+      }
+      
+      /* remove the img’s right‑margin so it’s perfectly centered */
+      .back-button img {
+        margin-right: 0      !important;
+      }
+  }
+  
+
+  
