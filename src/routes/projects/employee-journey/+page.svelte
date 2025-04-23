@@ -21,7 +21,7 @@
     <div class="project-header mb-10">
       <h1 class="text-4xl font-bold mb-4">Employee Journey</h1>
       <p class="text-lg text-gray-200 mb-2">
-        Improving the usability of the digital job application process for Financieelsysteem B.V.
+        Improving the usability of the digital job application process for Financieelsysteem B.V.
       </p>
       <p class="text-base text-gray-200">
         Tools used: <span class="font-medium">Figma, Miro, user interviews</span>
@@ -32,7 +32,7 @@
     <section class="problem mb-10">
       <h2 class="text-2xl font-bold mb-4">Problem</h2>
       <p class="mb-4 text-gray-200">
-        Financieelsysteem B.V. had no real way for candidates to apply. The careers page was confusing, there was no apply button, and applications came in by generic email; resulting in zero clarity or conversion.
+        Financieelsysteem B.V. had no real way for candidates to apply. The careers page was confusing, there was no apply button, and applications came in by generic email; resulting in zero clarity or conversion.
       </p>
     </section>
   
@@ -40,29 +40,33 @@
     <section class="research mb-10">
       <h2 class="text-2xl font-bold mb-4">Research &amp; Insights</h2>
       <ul class="list-disc ml-6 space-y-2 text-gray-200">
-        <li><strong>Effectiveness:</strong> No apply button means candidates can’t complete their goal.</li>
+        <li><strong>Effectiveness:</strong> No apply button means candidates can't complete their goal.</li>
         <li><strong>Efficiency:</strong> Absence of search and filters forces users to scroll every listing.</li>
         <li><strong>Aesthetics:</strong> Minimal styling gave an unprofessional first impression.</li>
         <li><strong>Error Tolerance:</strong> No validation or confirmation leaves users unsure if they applied.</li>
-        <li><strong>Ease of Learning:</strong> Buzzword‑heavy listings confused new graduates.</li>
+        <li><strong>Ease of Learning:</strong> Buzzword heavy listings confuses users.</li>
       </ul>
     </section>
   
-    <!-- Process Highlights -->
-    <section class="process mb-10">
-      <h2 class="text-2xl font-bold mb-4">Process Highlights</h2>
-      <ol class="list-decimal ml-6 space-y-2 text-gray-200">
-        <li>
-          <strong>Audit & Interviews:</strong> Mapped a 0% completion flow—stakeholders were surprised no one could apply.
-        </li>
-        <li>
-          <strong>Journey Mapping:</strong> Converted the employee journey into a candidate map, revealing three main drop‑off points.
-        </li>
-        <li>
-          <strong>Prototyping:</strong> Ran three wireframe iterations; expert reviews cut confusion by 60%.
-        </li>
-      </ol>
-    </section>
+<!-- Process Highlights -->
+<section class="process mb-10">
+  <h2 class="text-2xl font-bold mb-4">Process Highlights</h2>
+  <ol class="list-decimal ml-6 space-y-2 text-gray-200">
+    <li>
+      <strong>Current State Audit:</strong>
+      Stakeholder interviews and a 5 E usability walkthrough exposed a critical gap: vacancies were listed, but candidates had no way to apply online.
+    </li>
+    <li>
+      <strong>Journey Mapping & Competitive Scan:</strong>
+      Translated the internal employee journey into a candidate centric flow and benchmarked it against other fintech and Dutch corporate career sites to surface best practices and pain points.
+    </li>
+    <li>
+      <strong>Iterative Prototyping:</strong>
+      Three sprint cycles evolved low-fi wireframes into a hi-fi prototype with search & filter, a “Find your team” explorer, and a four-step application timeline. 
+    </li>
+  </ol>
+</section>
+
   
     <!-- Evidence Screens -->
     <figure class="mb-10">
@@ -103,16 +107,14 @@
       <h2 class="text-2xl font-bold mb-4">What I Learned &amp; Next Steps</h2>
       <ul class="list-disc ml-6 space-y-2 text-gray-200">
         <li>Agree on core requirements up front to avoid scope creep.</li>
-        <li>Protect dedicated design time so research doesn’t overshadow prototyping.</li>
-        <li>Use rapid expert reviews to catch major usability issues early.</li>
-        <li>Next steps: build error states, mobile responsiveness, and richer interactions.</li>
+        <li>Protect dedicated design time so research doesn't overshadow prototyping.</li>
+        <li>Use more and better expert reviews to catch usability issues early.</li>
+        <li>Next steps: build error states, mobile responsiveness, and better interactions.</li>
       </ul>
     </section>
 
     <p class="mt-4 text-sm text-blue-300">
         <a href="https://www.figma.com/proto/xASOgxfKJpYHhHWvcaSyoU/Afstuderen?node-id=201-455&starting-point-node-id=201%3A455&t=Cg8yafCXOZQLtB2R-1" target="_blank" rel="noopener">View full prototype →</a>
       </p>
-      
-  
   </div>
   
