@@ -58,46 +58,7 @@
             path: "fireball-animation",
         }
     ];
-
-    // OVERLAY SCRIPT MET LOCALSTORAGE
-    let showOverlay = true;
-
-    function hideOverlay() {
-        const leftDoor = document.querySelector('.door.left') as HTMLElement;
-        const rightDoor = document.querySelector('.door.right') as HTMLElement;
-
-        if (leftDoor && rightDoor) {
-            leftDoor.style.transform = 'rotateY(-90deg)';
-            rightDoor.style.transform = 'rotateY(90deg)';
-        }
-
-        setTimeout(() => {
-            showOverlay = false;
-            localStorage.setItem("hasSeenOverlay", "true"); // Opslaan in localStorage
-        }, 1500);
-    }
-
-    // Check bij laden of de gebruiker de overlay al heeft gezien
-    onMount(() => {
-        if (localStorage.getItem("hasSeenOverlay") === "true") {
-            showOverlay = false; // Niet meer tonen als het al gezien is
-        }
-    });
 </script>
-
-{#if showOverlay}
-    <div class="overlay">
-        <div class="doors">
-            <div class="door left"></div>
-            <div class="door right"></div>
-        </div>
-        <div class="overlay-text">
-            <h1>Hi! I'm Diam</h1>
-            <p>Welcome to my portfolio</p>
-            <button class="enter-btn" on:click={hideOverlay}>Enter</button>
-        </div>
-    </div>
-{/if}
 
 <section class="max-w-12xl p-8 grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12">
     <!-- Project Grid -->
