@@ -37,7 +37,7 @@
         <img src="{base}/images/avatar.svg" alt="Diam's Avatar" class="avatar"/>
         <div class="ml-20 md:ml-20">
           <h1 class="text-4xl font-bold">Diam Kanbier</h1>
-          <p class="text-lg ml-0.5">UX Designer</p>
+          <p class="text-lg ml-0.5">Digital Designer</p>
           <div class="flex items-center mt-12">
             <span class="mr-2">Welcome, visitor</span>
             <VisitorCounter />
