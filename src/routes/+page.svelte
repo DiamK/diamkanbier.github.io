@@ -86,10 +86,10 @@
     <aside class="self-start w-[90%] lg:w-[90%]">
         <h2 class="text-[#FFB84D] text-xl font-bold">About Me</h2>
         <br>
-        <p>I am a digital designer with a passion for creating intuitive, user-focused digital experiences. My design approach is a combination of thoughtful analysis and human psychology.
+        <p>I am a digital designer interested in human behaviour and I use that to design interfaces that feel clear and intuitive to use.
             <br>
             <br>
-            I recently graduated with a project centered around redesigning the digital job application process, where I learned that clear communication and a deep understanding of user needs are essential. This experience reinforced my belief that good design starts with empathy; seeing users not just as 'users,' but as real people with genuine motivations, emotions, and behavior.
+            
             <br>
             <br>
             In my free time, I explore animation and game design principles as creative outlets and enjoy diving deeper into psychology.
