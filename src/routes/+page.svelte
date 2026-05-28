@@ -86,13 +86,16 @@
     <aside class="self-start w-[90%] lg:w-[90%]">
         <h2 class="text-[#FFB84D] text-xl font-bold">About Me</h2>
         <br>
-        <p>I am a digital designer interested in human behaviour and I use that to design interfaces that feel clear and intuitive to use.
+        <p>I'm an analytical and empathic UX Designer with a bachelor's in Communication & Multimedia Design and a solid foundation in IT. What drives me is curiosity about human behaviour. Why do people do what they do? What do they experience? What do they need?
             <br>
             <br>
-            
+            To me, good design starts with empathy. That means seeing people not just as 'users,' but as real human beings with genuine motivations, emotions, and behaviour. 
             <br>
             <br>
-            In my free time, I explore animation and game design principles as creative outlets and enjoy diving deeper into psychology.
+            Gaming has been part of my life for as long as I can remember, and it shapes a lot of how I think about design. Every interaction, every friction point, dictates how I feel about a digital experience and that carries into how I approach UX.
+            <br>
+            <br>
+            Outside of work I explore animation, game design, and psychology, usually as different ways of understanding the same thing: how people perceive and interact with the world around them.
         </p>
     </aside>
 </section>
