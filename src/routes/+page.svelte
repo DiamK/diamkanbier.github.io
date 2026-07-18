@@ -1,101 +1,59 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import VisitorCounter from "$components/VisitorCounter.svelte";
-    import ProjectTile from '$components/ProjectTile.svelte';
-    import { base } from '$app/paths';
+	import { tweaks } from '$lib/tweaks.svelte';
+	import { PROJECTS, NOW, ABOUT, CONTACT } from '$lib/data';
 
-    let hoveredTile: string | null = null;
+	import Hero from '$components/Hero.svelte';
+	import FeaturedCard from '$components/FeaturedCard.svelte';
+	import ProjectGrid from '$components/ProjectGrid.svelte';
+	import NowSection from '$components/NowSection.svelte';
+	import AboutSection from '$components/AboutSection.svelte';
+	import ContactSection from '$components/ContactSection.svelte';
 
-    // PROJECTS ARRAY
-    const projects = [
-        {
-            title: "Girl in Blue",
-            description: "Animation of a 2D character in a 3D world",
-            category: "Animation",
-            icon: `${base}/images/gib_thumbnail.png`,
-            path: "girl-in-blue",
-        },
-        {
-            title: "Employee Journey",
-            description: "Redesign of the job application process at Financieelsysteem, improving UX through team-matching and a streamlined hiring flow",
-            category: "UX Design",
-            icon: `${base}/images/ej.png`,
-            path: "employee-journey",
-        },
-        {
-            title: "Recharge the World",
-            description: "Marketing campaign to incentivise recycling batteries",
-            category: "Graphic Design",
-            icon: `${base}/images/rtw_thumbnail.png`,
-            path: "recharge-the-world",
-        },
-        {
-            title: "Edge of Night",
-            description: "Kinetic typography animation of the song Edge of Night from The Lord of the Rings",
-            category: "Animation",
-            icon: `${base}/images/eon_thumbnail2.png`,
-            path: "edge-of-night",
-        },
-        {
-            title: "Finish the Jam",
-            description: "Sing along until the traffic is gone!",
-            category: "UX Design",
-            icon: `${base}/images/ftj_thumbnail.png`,
-            path: "finish-the-jam",
-        },
-        {
-            title: "Puzzlewalk",
-            description: "Designing an app to help the elderly with sPAV walk more",
-            category: "UX Design",
-            icon: `${base}/images/puzzle_thumbnail.jpg`,
-            path: "puzzlewalk",
-        },
-        {
-            title: "Fireball animation",
-            description: "Learning fire and smoke animation in Blender",
-            category: "Animation",
-            icon: `${base}/images/fireball_thumbnail.png`,
-            path: "fireball-animation",
-        }
-    ];
+	// The featured project is always "employee-journey" (first in the list).
+	// All others appear in the grid below it.
+	const featuredSlug = 'employee-journey';
+	const featured     = $derived(PROJECTS.find((p) => p.slug === featuredSlug)!);
+	const gridProjects = $derived(
+		tweaks.featuredOn
+			? PROJECTS.filter((p) => p.slug !== featuredSlug)
+			: PROJECTS
+	);
 </script>
 
-<section class="max-w-12xl p-8 grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12">
-    <!-- Project Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {#each projects as project}
-            <article 
-                class="transition duration-300 ease-in-out transform min-h-[150px] flex flex-col"
-                class:blur-[1px]={hoveredTile !== null && hoveredTile !== project.title}
-                class:scale-105={hoveredTile === project.title}
-                on:mouseenter={() => hoveredTile = project.title}
-                on:mouseleave={() => hoveredTile = null}
-            >
-                <ProjectTile
-                    title={project.title}
-                    description={project.description}
-                    category={project.category}
-                    icon={project.icon}
-                    path={project.path}
-                />
-            </article>
-        {/each}
-    </div>
+<div class="app">
+	<!-- 01 — Hero -->
+	<Hero heroLayout={tweaks.heroLayout} />
 
-    <!-- About Me -->
-    <aside class="self-start w-[90%] lg:w-[90%]">
-        <h2 class="text-[#FFB84D] text-xl font-bold">About Me</h2>
-        <br>
-        <p>I'm an analytical and empathic UX Designer with a bachelor's in Communication & Multimedia Design and a solid foundation in IT. What drives me is curiosity about human behaviour. Why do people do what they do? What do they experience? What do they need?
-            <br>
-            <br>
-            To me, good design starts with empathy. That means seeing people not just as 'users,' but as real human beings with genuine motivations, emotions, and behaviour. 
-            <br>
-            <br>
-            Gaming has been part of my life for as long as I can remember, and it shapes a lot of how I think about design. Every interaction, every friction point, dictates how I feel about a digital experience and that carries into how I approach UX.
-            <br>
-            <br>
-            Outside of work I explore animation, game design, and psychology, usually as different ways of understanding the same thing: how people perceive and interact with the world around them.
-        </p>
-    </aside>
-</section>
+	<!-- 01b — Featured project (toggled via tweaks panel) -->
+	{#if tweaks.featuredOn && featured}
+		<section class="section" id="featured">
+			<div class="section-head">
+				<div class="section-title">
+					<span class="section-num">01</span>
+					<h2>Selected work</h2>
+				</div>
+				<span class="section-meta">CASE STUDY</span>
+			</div>
+			<FeaturedCard project={featured} />
+		</section>
+	{/if}
+
+	<!-- 02 — All projects grid -->
+	<ProjectGrid projects={gridProjects} density={tweaks.density} />
+
+	<!-- 03 — Currently / Now -->
+	<NowSection items={NOW} />
+
+	<!-- 04 — About -->
+	<AboutSection about={ABOUT} />
+
+	<!-- 05 — Contact -->
+	<ContactSection contact={CONTACT} />
+
+	<!-- Footer -->
+	<footer class="foot">
+		<span class="mono">© 2026 DIAM KANBIER</span>
+		<span class="muted mono">DESIGNED IN HTML · MADE WITH CARE</span>
+		<span class="mono">v3.0</span>
+	</footer>
+</div>

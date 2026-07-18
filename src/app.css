@@ -1,298 +1,394 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000&display=swap');
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-* {
-    font-family: 'Nunito', sans-serif;
+/* ─── Design tokens ─────────────────────────────────────────────────────────
+   These CSS custom properties drive the entire palette. The TweaksPanel
+   component mutates --accent, --accent-2, --bg, and the --r-* radius vars at
+   runtime. Everything else (surface, border, text) is derived and stays fixed.
+   ──────────────────────────────────────────────────────────────────────────── */
+:root {
+	--accent: #3d7bff;
+	--accent-2: #4fd1e0;
+	--accent-soft: color-mix(in oklab, var(--accent) 30%, transparent);
+
+	--bg: #0a1220;
+	--bg-2: #0e1828;
+	--surface: #131f33;
+	--surface-2: #1a2a42;
+	--surface-3: #213553;
+	--border: #243a5c;
+	--border-soft: #1b2a42;
+
+	--text: #e9f0fa;
+	--text-dim: #b6c3d6;
+	--muted: #6e84a3;
+
+	--r-sm: 6px;
+	--r-md: 10px;
+	--r-lg: 16px;
+
+	--font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+	--font-body: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	-webkit-font-smoothing: antialiased;
+	font-feature-settings: 'ss01' on, 'cv11' on;
 }
 
 body {
-    background: linear-gradient(to bottom, #0E374E, #031A27);
-    color: white;
+	background:
+		radial-gradient(1200px 600px at 80% -10%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%),
+		radial-gradient(900px 500px at -10% 30%, color-mix(in oklab, var(--accent-2) 8%, transparent), transparent 60%),
+		var(--bg);
+	min-height: 100vh;
 }
 
-/* Overlay (laat staan als je deze functionaliteit gebruikt) */
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 50;
+a {
+	color: inherit;
+	text-decoration: none;
+}
+button {
+	font-family: inherit;
+	cursor: pointer;
 }
 
-/* De deuren (laat staan als je deze gebruikt) */
-.doors {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    overflow: hidden;
+/* ─── Shared utility classes ─────────────────────────────────────────────── */
+.mono {
+	font-family: var(--font-mono);
+	letter-spacing: 0.02em;
+}
+.muted {
+	color: var(--muted);
+}
+.accent-text {
+	color: var(--accent);
 }
 
-.door {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    flex: 1;
-    transition: transform 1.5s ease-in-out;
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 18px;
+	border-radius: var(--r-md);
+	border: 1px solid transparent;
+	font-size: 14px;
+	font-weight: 600;
+	transition:
+		transform 120ms,
+		background 160ms,
+		border-color 160ms,
+		color 160ms,
+		filter 160ms;
+	background: transparent;
+	color: var(--text);
+	cursor: pointer;
+	text-decoration: none;
+}
+.btn-primary {
+	background: var(--accent);
+	color: #0a1220;
+	border-color: var(--accent);
+}
+.btn-primary:hover {
+	transform: translateY(-1px);
+	filter: brightness(1.08);
+}
+.btn-ghost {
+	border-color: var(--border);
+	background: var(--surface);
+	color: var(--text);
+}
+.btn-ghost:hover {
+	border-color: var(--accent);
+	color: var(--accent);
 }
 
-.door.left {
-    transform-origin: left center;
-    transform: rotateY(0deg);
+/* ─── Chips ──────────────────────────────────────────────────────────────── */
+.chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 4px 10px;
+	border-radius: 999px;
+	border: 1px solid var(--border);
+	background: var(--surface);
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	color: var(--text-dim);
+	text-transform: uppercase;
+	font-weight: 600;
+	font-family: var(--font-mono);
+}
+.chip-primary {
+	border-color: color-mix(in oklab, var(--accent) 50%, var(--border));
+	color: var(--accent);
+	background: color-mix(in oklab, var(--accent) 12%, var(--surface));
+}
+.chip-cyan {
+	border-color: color-mix(in oklab, var(--accent-2) 50%, var(--border));
+	color: var(--accent-2);
+	background: color-mix(in oklab, var(--accent-2) 12%, var(--surface));
+}
+.chip-accent {
+	border-color: color-mix(in oklab, var(--accent) 60%, transparent);
+	color: var(--accent);
+	background: color-mix(in oklab, var(--accent) 14%, transparent);
+}
+.chip-muted {
+	background: var(--surface);
+	border-color: var(--border);
+	color: var(--text-dim);
+	font-family: var(--font-body);
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: 500;
 }
 
-.door.right {
-    transform-origin: right center;
-    transform: rotateY(0deg);
+/* ─── App shell ──────────────────────────────────────────────────────────── */
+.app {
+	max-width: 1320px;
+	margin: 0 auto;
+	padding: 0 32px 80px;
 }
 
-/* Overlay tekst */
-.overlay-text {
-    position: absolute;
-    text-align: center;
-    color: white;
-    z-index: 10;
+/* ─── Section chrome ─────────────────────────────────────────────────────── */
+.section {
+	padding: 88px 0 0;
+}
+.section-head {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 24px;
+	margin-bottom: 36px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid var(--border-soft);
+}
+.section-title {
+	display: flex;
+	align-items: baseline;
+	gap: 18px;
+}
+.section-title h2 {
+	font-family: var(--font-display);
+	font-size: clamp(32px, 4vw, 48px);
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	margin: 0;
+}
+.section-num {
+	font-family: var(--font-mono);
+	font-size: 13px;
+	letter-spacing: 0.2em;
+	color: var(--accent);
+}
+.section-meta {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.18em;
+	color: var(--muted);
+	text-transform: uppercase;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
 }
 
-.overlay-text h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+/* ─── Modal chrome ───────────────────────────────────────────────────────── */
+.modal-veil {
+	position: fixed;
+	inset: 0;
+	background: color-mix(in oklab, #000 60%, transparent);
+	backdrop-filter: blur(8px);
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	animation: fadeIn 160ms ease-out;
+}
+.modal {
+	width: 100%;
+	max-width: 520px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--r-lg);
+	overflow: hidden;
+	animation: slideUp 200ms ease-out;
+}
+.modal-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 16px;
+	border-bottom: 1px solid var(--border-soft);
+	background: var(--bg-2);
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.18em;
+	color: var(--muted);
+	text-transform: uppercase;
+}
+.modal-close {
+	background: var(--surface-2);
+	border: 1px solid var(--border);
+	color: var(--text-dim);
+	padding: 4px 8px;
+	border-radius: var(--r-sm);
+	font-family: var(--font-mono);
+	font-size: 10px;
+	letter-spacing: 0.16em;
+}
+.modal-body {
+	padding: 24px;
+}
+.modal-body h3 {
+	font-family: var(--font-display);
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	margin: 0 0 4px;
+}
+.modal-body > p {
+	color: var(--text-dim);
+	margin: 0 0 24px;
 }
 
-.overlay-text p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+.foot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	padding: 48px 0 0;
+	margin-top: 80px;
+	border-top: 1px solid var(--border-soft);
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.18em;
+	color: var(--muted);
+	text-transform: uppercase;
 }
 
-/* Knop */
-.enter-btn {
-    background: #0F384F;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    transition: background 0.3s;
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+@keyframes pulse {
+	50% {
+		transform: scale(1.18);
+	}
 }
-
-.enter-btn:hover {
-    background: #0F384F;
-}
-
-/* Content (voor animaties etc.) */
-.content {
-    display: none;
-    opacity: 0;
-    animation: fadeIn 1s forwards 1.5s;
+@keyframes spinSlow {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 @keyframes fadeIn {
-    to { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes slideUp {
+	from {
+		transform: translateY(12px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
-/* Avatar */
-.avatar {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 2px solid #FFB84D; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Project Tile */
-.project-tile {
-    background: rgba(255, 204, 102, 0.08);
-    border-left: 4px solid #FFB84D;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-tile:hover {
-    box-shadow: 0 4px 10px rgba(255, 184, 77, 0.3);
-}
-
-/* Header styling (ongewijzigd) */
-header {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    padding-bottom: 1rem;
-}
-
-/* Project Page */
+/* ─── Legacy project page styles (keeps existing case study routes intact) ── */
 .project-page {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px 20px;
-    margin-top: 25px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-bottom: 20px;
+	max-width: 900px;
+	margin: auto;
+	padding: 20px 20px;
+	margin-top: 25px;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	margin-bottom: 20px;
 }
-
-/* Project Header */
 .project-header h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 5px;
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 5px;
 }
-
-/* Universele H2 styling voor alle secties binnen .project-page */
 .project-page section h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 1.5rem;
+	margin-bottom: 0.5rem;
 }
-
-/* Video Container */
 .video-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
 }
 .video-container iframe {
-    max-width: 100%;
-    width: 800px;
-    height: 450px;
-    border-radius: 10px;
+	max-width: 100%;
+	width: 800px;
+	height: 450px;
+	border-radius: 10px;
 }
-
-/* Project Details */
 .project-details p,
 .project-details ul,
 .project-details li {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #ddd;
+	font-size: 16px;
+	line-height: 1.6;
+	color: #ddd;
 }
 .project-details ul {
-    display: flex;
-    gap: 10px;
-    padding: 0;
-    list-style: none;
-    margin-top: 10px;
+	display: flex;
+	gap: 10px;
+	padding: 0;
+	list-style: none;
+	margin-top: 10px;
 }
 .project-details li {
-    background: #FFB84D;
-    color: #0E374E;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
+	background: #ffb84d;
+	color: #0e374e;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-weight: bold;
 }
-
-/* C Button: make it white with a subtle opacity */
-.c-button {
-    display: inline-block;
-    width: 38px;
-    height: 38px;
-    vertical-align: middle;
-    transition: transform 0.1s ease;
-    filter: brightness(0) invert(1);
-    opacity: 0.7;
-}
-.c-button.pressed {
-    transform: scale(0.9);
-}
-
-/* Back Button */
 .back-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(14, 55, 78, 0.8);
-    position: absolute;
-    top: 350px;
-    left: 120px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 10px 16px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-    border: 1px solid rgba(255, 184, 77, 0.6);
-}
-.back-button img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: #93c5fd;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px 0;
+	text-decoration: none;
+	transition: color 0.2s ease;
 }
 .back-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
-    background: rgba(14, 55, 78, 1);
+	color: #bfdbfe;
 }
 
-/* === PHONE: stack header elements fully === */
-@media (max-width: 640px) {
-    /* 1) Make the header’s inner flex container a true column, remove margins */
-    header > div {
-      flex-direction: column !important;
-      align-items: center    !important;
-      margin-left:   0       !important;
-      margin-right:  0       !important;
-      text-align:    center  !important;
-    }
-  
-    /* 2) Stack avatar + name/info vertically */
-    header > div > div:first-child {
-      flex-direction: column !important;
-      align-items:    center !important;
-      margin:         0      !important;
-      gap:            0.5rem !important;
-    }
-  
-    /* 3) Remove the ml-20 on the name block so it centers under the avatar */
-    header > div > div:first-child > div {
-      margin-left: 0 !important;
-      margin-top:  0.5rem !important;
-    }
-  
-    /* 4) Shrink avatar a bit and give it bottom‑spacing */
-    header .avatar {
-      width:  70%  !important;
-      height: 70%  !important;
-      margin-bottom: 0.75rem !important;
-    }
-  
-    /* 5) Pull the “open to work” / Press C block beneath, center it */
-    header > div > div:last-child {
-      margin:      1rem 0 0 !important;
-      align-items: center !important;
-      text-align:  center !important;
-      margin-right: 0      !important;
-    }
-  
-    /* 6) Ensure all headings and paragraphs in header are centered */
-    header h1,
-    header p {
-      text-align: center !important;
-    }
-    .back-button {
-        /* undo any prior absolute or transform */
-        position:  relative   !important;
-        top:       auto       !important;
-        left:      auto       !important;
-        transform: none       !important;
-        z-index:   auto       !important;
-      
-        /* center under header, give vertical breathing room */
-        display:   inline-block !important;
-        margin:    1.5rem auto 1rem auto !important;
-      
-        /* hide the “Back to tiles” text */
-        font-size: 0         !important;
-        line-height: 0       !important;
-      }
-      
-      /* remove the img’s right‑margin so it’s perfectly centered */
-      .back-button img {
-        margin-right: 0      !important;
-      }
-  }
-  
-
-  
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+	.app {
+		padding: 0 18px 60px;
+	}
+}
