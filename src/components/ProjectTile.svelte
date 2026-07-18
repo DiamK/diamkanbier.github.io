@@ -3,7 +3,6 @@
 
   export let title: string;
   export let description: string;
-  export let category: string;
   export let icon: string;
   export let path: string;
 
@@ -27,15 +26,12 @@
     on:mouseleave={handleMouseLeave}
 >
 <article class="project-tile flex items-center gap-4 p-4 bg-[#0E374E] rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition duration-300 h-full">
-        <!-- Icon with Category Tag -->
-        <div class="flex flex-col items-center">
-            <div class="relative w-16 h-16 rounded-lg bg-gray-800 overflow-hidden flex items-center justify-center">
-                {#if icon}
-                    <img src={icon} alt={title} class="w-full h-full object-cover" />
-                {/if}
-                <span class="absolute inset-0 bg-black opacity-20"></span> <!-- Image overlay -->
-            </div>
-            <span class="mt-2 text-xs text-white bg-gray-700 px-2 py-[2px] rounded-full whitespace-nowrap">{category}</span>
+        <!-- Icon -->
+        <div class="relative w-16 h-16 rounded-lg bg-gray-800 overflow-hidden flex items-center justify-center shrink-0">
+            {#if icon}
+                <img src={icon} alt={title} class="w-full h-full object-cover" />
+            {/if}
+            <span class="absolute inset-0 bg-black opacity-20"></span> <!-- Image overlay -->
         </div>
 
         <!-- Title & Description (flex-grow fix) -->

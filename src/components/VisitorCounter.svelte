@@ -9,11 +9,5 @@
     });
   </script>
   
-  <div class="flex items-center justify-center text-4xl font-mono">
-    <div class="flex">
-      {#each count.toString().split("") as digit}
-        <div class="p-2 bg-black text-center mx-1 rounded">{digit}</div>
-      {/each}
-    </div>
-  </div>
+  <span class="font-mono font-bold text-[#FFB84D] text-xl tabular-nums">{count}</span>
   
